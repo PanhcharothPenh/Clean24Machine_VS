@@ -1,6 +1,9 @@
 import asyncio
 import logging
+import os
 import sys
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime, time
 import pytz
 from typing import List, Set
@@ -25,6 +28,26 @@ logging.basicConfig(
     level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
+# Dummy Healthcheck HTTP Server for Render / Railway Free Web Services ($0/mo)
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(b"Clean24 Speed Queen Bot is Live and Running 24/7!")
+
+    def log_message(self, format, *args):
+        return  # Silence health check logs
+
+def start_healthcheck_server():
+    port = int(os.environ.get("PORT", 8080))
+    try:
+        server = HTTPServer(("0.0.0.0", port), HealthCheckHandler)
+        logger.info(f"Healthcheck HTTP server listening on port {port} for Free Web Service hosting.")
+        server.serve_forever()
+    except Exception as e:
+        logger.error(f"Error running healthcheck server: {e}")
 
 # Global instances
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
@@ -52,9 +75,6 @@ def format_khmer_date(date_str: str) -> str:
 
 
 def get_persistent_reply_keyboard() -> ReplyKeyboardMarkup:
-    """
-    Returns persistent bottom keyboard matching user's exact screenshot UI layout.
-    """
     keyboard = [
         [
             KeyboardButton("📊 ស្ថានភាពម៉ាស៊ីន"),
@@ -350,9 +370,6 @@ async def daily_scheduled_revenue_job(context: ContextTypes.DEFAULT_TYPE) -> Non
 
 
 async def post_init(application: Application) -> None:
-    """
-    Sets the Telegram Bot Commands for the blue Menu button at bottom-left.
-    """
     commands = [
         BotCommand("status", "📊 ពិនិត្យស្ថានភាពម៉ាស៊ីន (W1 - D10)"),
         BotCommand("revenue", "💰 របាយការណ៍ចំណូលសរុបប្រចាំថ្ងៃ"),
@@ -368,6 +385,9 @@ def main():
     if not Config.TELEGRAM_BOT_TOKEN or Config.TELEGRAM_BOT_TOKEN == "your_telegram_bot_token_here":
         print("❌ TELEGRAM_BOT_TOKEN missing in .env")
         sys.exit(1)
+
+    # Start background HTTP Healthcheck Server for Render Free Web Service ($0/mo)
+    threading.Thread(target=start_healthcheck_server, daemon=True).start()
 
     app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).post_init(post_init).build()
 
@@ -395,7 +415,7 @@ def main():
         job_queue.run_daily(daily_scheduled_revenue_job, time=report_time)
         print(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
 
-    print("🚀 Speed Queen Insights Telegram Bot (Guaranteed Machine End Notifications) is running...")
+    print("🚀 Speed Queen Insights Telegram Bot (Free Render Web Service Ready) is running...")
     app.run_polling()
 
 
