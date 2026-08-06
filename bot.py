@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Dummy Healthcheck HTTP Server for Render / Railway Free Web Services ($0/mo)
+# Dummy Healthcheck HTTP Server for Render Free Web Services ($0/mo)
 class HealthCheckHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -38,7 +38,7 @@ class HealthCheckHandler(BaseHTTPRequestHandler):
         self.wfile.write(b"Clean24 Speed Queen Bot is Live and Running 24/7!")
 
     def log_message(self, format, *args):
-        return  # Silence health check logs
+        return
 
 def start_healthcheck_server():
     port = int(os.environ.get("PORT", 8080))
@@ -171,7 +171,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "❓ *សៀវភៅណែនាំប្រើប្រាស់ Speed Queen Bot (Clean24 Veng Sreng)*\n\n"
         "1. **របាយការណ៍ស្ថានភាព**: ចុចលើ Button `📊 ស្ថានភាពម៉ាស៊ីន` ដើម្បីមើលស្ថានភាព W1 ដល់ D10។\n"
         "2. **របាយការណ៍ចំណូល**: ចុចលើ Button `💰 របាយការណ៍ចំណូល` ដើម្បីទាញយកចំណូលសរុបប្រចាំថ្ងៃផ្ទាល់ពី Speed Queen Insights។\n"
-        "3. **ការជូនដំណឹងស្វ័យប្រវត្តិប្រចាំថ្ងៃ**: ប្រព័ន្ធផ្ញើរបាយការណ៍ចំណូលស្វ័យប្រវត្តិនាតាមម៉ោង **10:40 PM** រៀងរាល់យប់។"
+        "3. **សាកល្បងសារ START/END**: ផ្ញើសារ `/teststart` ឬ `/testend` ដើម្បីសាកល្បងសារជូនដំណឹងស្វ័យប្រវត្តិ។\n"
+        "4. **ការជូនដំណឹងស្វ័យប្រវត្តិប្រចាំថ្ងៃ**: ប្រព័ន្ធផ្ញើរបាយការណ៍ចំណូលស្វ័យប្រវត្តិនាតាមម៉ោង **10:40 PM** រៀងរាល់យប់។"
     )
     await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
 
@@ -189,6 +190,33 @@ async def send_status_response(update: Update) -> None:
 
 async def status_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await send_status_response(update)
+
+
+async def teststart_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    chat_id = str(update.effective_chat.id)
+    tracker.add_subscriber(chat_id)
+    alert_msg = (
+        "🤖 *ការជូនដំណឹងស្វ័យប្រវត្តិ*\n\n"
+        "🚀 *ម៉ាស៊ីនចាប់ផ្តើមដំណើរការ! (Test Alert)*\n"
+        "🧺 *Clean24 Veng Sreng*\n"
+        "🔢 *ម៉ាស៊ីន៖* W1 (9kg)\n"
+        "🔵 *ស្ថានភាព៖* កំពុងដំណើរការ\n"
+        "⏱️ 35 នាទី"
+    )
+    await update.message.reply_text(alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+
+
+async def testend_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    chat_id = str(update.effective_chat.id)
+    tracker.add_subscriber(chat_id)
+    alert_msg = (
+        "🤖 *ការជូនដំណឹងស្វ័យប្រវត្តិ*\n\n"
+        "🎉 *ម៉ាស៊ីនបោក/សម្ងួតរួចរាល់! (Test Alert)*\n"
+        "🧺 *Clean24 Veng Sreng*\n"
+        "🔢 *ម៉ាស៊ីន៖* W1 (9kg)\n"
+        "🟢 *ស្ថានភាព៖* ទំនេរ (រួចរាល់)"
+    )
+    await update.message.reply_text(alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
 
 
 async def send_revenue_report_card(app: Application, chat_ids: Set[str], update: Update = None) -> None:
@@ -375,6 +403,8 @@ async def post_init(application: Application) -> None:
         BotCommand("revenue", "💰 របាយការណ៍ចំណូលសរុបប្រចាំថ្ងៃ"),
         BotCommand("check", "🔄 ពិនិត្យទិន្នន័យភ្លាមៗ"),
         BotCommand("machines", "🧺 បញ្ជីម៉ាស៊ីន (W1 - D10)"),
+        BotCommand("teststart", "🚀 សាកល្បងផ្ញើសារ START Alert"),
+        BotCommand("testend", "🎉 សាកល្បងផ្ញើសារ END Alert"),
         BotCommand("help", "❓ សៀវភៅណែនាំប្រើប្រាស់"),
     ]
     await application.bot.set_my_commands(commands)
@@ -400,6 +430,8 @@ def main():
     app.add_handler(CommandHandler("subscribe", subscribe_command))
     app.add_handler(CommandHandler("unsubscribe", unsubscribe_command))
     app.add_handler(CommandHandler("machines", machines_command))
+    app.add_handler(CommandHandler("teststart", teststart_command))
+    app.add_handler(CommandHandler("testend", testend_command))
 
     # Add Text Button Message Handler (Persistent Reply Keyboard)
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply_text_button_handler))
@@ -415,7 +447,7 @@ def main():
         job_queue.run_daily(daily_scheduled_revenue_job, time=report_time)
         print(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
 
-    print("🚀 Speed Queen Insights Telegram Bot (Free Render Web Service Ready) is running...")
+    print("🚀 Speed Queen Insights Telegram Bot (with /teststart & /testend commands) is running...")
     app.run_polling()
 
 
