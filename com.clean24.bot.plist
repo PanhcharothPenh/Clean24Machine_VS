@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.clean24.bot</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/miller/Desktop/Project_AI/CleanMachine_Bot/venv/bin/python</string>
+        <string>/Users/miller/Desktop/Project_AI/CleanMachine_Bot/bot.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/miller/Desktop/Project_AI/CleanMachine_Bot</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/miller/Desktop/Project_AI/CleanMachine_Bot/bot.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/miller/Desktop/Project_AI/CleanMachine_Bot/bot_err.log</string>
+</dict>
+</plist>

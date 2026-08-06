@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  clean24_bot:
+    build: .
+    container_name: clean24_machine_bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./machine_states.json:/app/machine_states.json
+      - ./subscribed_chats.json:/app/subscribed_chats.json
