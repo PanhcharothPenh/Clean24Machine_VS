@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local database / state files
+machine_states.json
+subscribed_chats.json
+
+# Logs & temp files
+*.log
+scratch/
+.DS_Store

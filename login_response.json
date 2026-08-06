@@ -1,0 +1,3638 @@
+{
+  "jsonapi": {
+    "version": "1.0"
+  },
+  "links": {
+    "self": "/users"
+  },
+  "data": {
+    "type": "users",
+    "id": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+    "attributes": {
+      "userGuid": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+      "firstName": "Panhcharoth",
+      "lastName": "Penh",
+      "isActive": true,
+      "relationshipType": "CUSTOMER",
+      "createdAt": "2026-07-06T03:58:49.242769",
+      "updatedAt": "2026-08-06T14:32:17.473976",
+      "userIsHidden": false,
+      "isEmailVerified": true,
+      "userRelationshipIsActive": true,
+      "marketingOptIn": true,
+      "universalOptOutSms": false,
+      "universalOptOutEmail": false,
+      "loginIsActive": true,
+      "locale": "EN_US",
+      "hasVerifiedPhoneNumber": false,
+      "pendingPhoneChange": false,
+      "pendingEmailChange": false,
+      "hasAcceptedTOS": true,
+      "fbToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImlhdCI6MTc4NjAyODMzOCwiZXhwIjoxNzg2MDMxOTM4LCJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay10c2U5YUBhbGxpYW5jZS1pbnNpZ2h0cy1wcmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay10c2U5YUBhbGxpYW5jZS1pbnNpZ2h0cy1wcmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiJjZGFhMzc2MS1lY2NmLTQyYWUtYmYxNi1jZjgzODU5N2Q4NDQiLCJjbGFpbXMiOnsib3JnSWQiOjQ3ODExMDJ9fQ.jGBuT0ZV2w92rpC-iBh4Qxx9fQYASHoLbOoEf0xcJrkDvoYXs-ol-oe9lFN1FfapHO_vtPoIc7GdNoSN7f89iPUZxo4goks-9hQWgQ8jGjLqJ9lP3efeIxKbFzJj4nFjlfJqCyhVWLPJqL6wa0SIfuafSWVZWnf7YCoIbWnsLK5LuyVXyQKf9zf0-DmSpfOT7yDlwHU7DoKYrHNtoxmHdfhD5E6ck1RKil2UXOMbrkculRTxRIrOo0O5FXMObUR3QnV4O4K3OOFvQ8Y1YFLt5cryJol0Jufu0cRTkO1tASOatSO57IQ_YDhAaij42JRo1VtNOl3anYxL1KT29yQmfA",
+      "userName": "panhcharoth@hotmail.com"
+    },
+    "relationships": {
+      "userRole": {
+        "data": {
+          "type": "user-roles",
+          "id": "5060275"
+        }
+      },
+      "createdBy": {
+        "data": {
+          "type": "users",
+          "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+        }
+      },
+      "organization": {
+        "data": {
+          "type": "organizations",
+          "id": "4781102"
+        }
+      },
+      "roles": {
+        "data": [
+          {
+            "type": "roles",
+            "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+          },
+          {
+            "type": "roles",
+            "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+          }
+        ]
+      },
+      "emailAddresses": {
+        "data": [
+          {
+            "type": "email-addresses",
+            "id": "8472379"
+          }
+        ]
+      },
+      "accounts": {
+        "data": [
+          {
+            "type": "accounts",
+            "id": "4176719"
+          }
+        ]
+      },
+      "phoneNumbers": {
+        "data": [
+          {
+            "type": "phone-numbers",
+            "id": "8472380"
+          }
+        ]
+      },
+      "machines": {
+        "data": []
+      },
+      "securityRoles": {
+        "data": [
+          {
+            "type": "security-roles",
+            "id": "3845"
+          }
+        ]
+      },
+      "geoBoundaryUnreadMailboxNotifications": {
+        "data": []
+      }
+    },
+    "links": {
+      "self": "/users/cdaa3761-eccf-42ae-bf16-cf838597d844"
+    }
+  },
+  "included": [
+    {
+      "type": "user-role-types",
+      "id": "PERSON_CUSTOMER",
+      "links": {
+        "self": "/userRoleType/PERSON_CUSTOMER"
+      }
+    },
+    {
+      "type": "user-roles",
+      "id": "5060275",
+      "links": {
+        "self": "/userRole/5060275"
+      }
+    },
+    {
+      "type": "users",
+      "id": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+      "attributes": {
+        "firstName": "Panhcharoth",
+        "lastName": "Penh",
+        "guid": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+        "createdAt": "2026-07-06T04:22:22"
+      },
+      "relationships": {
+        "createdBy": {
+          "data": {
+            "type": "users",
+            "id": "98f02605-86c3-4c30-997f-d23c061224ca"
+          }
+        }
+      },
+      "links": {
+        "self": "/users/cdaa3761-eccf-42ae-bf16-cf838597d844"
+      }
+    },
+    {
+      "type": "currencies",
+      "id": "116",
+      "attributes": {
+        "symbol": "\u17db",
+        "divisor": 1,
+        "iso4217Id": "116",
+        "iso4217Code": "KHR",
+        "thousandsSeparator": ",",
+        "decimalSeparator": ".",
+        "decimalPlaces": 0
+      },
+      "links": {
+        "self": "/currency/116"
+      }
+    },
+    {
+      "type": "role-types",
+      "id": "ORGANIZATION_FRANCHISE_OWNER",
+      "links": {
+        "self": "/roleType/ORGANIZATION_FRANCHISE_OWNER"
+      }
+    },
+    {
+      "type": "user-roles",
+      "id": "4799991",
+      "relationships": {
+        "roleType": {
+          "data": {
+            "type": "role-types",
+            "id": "ORGANIZATION_FRANCHISE_OWNER"
+          }
+        }
+      },
+      "links": {
+        "self": "/userRole/4799991"
+      }
+    },
+    {
+      "type": "brand-users",
+      "id": "1",
+      "attributes": {
+        "brandName": "SPEED_QUEEN"
+      },
+      "links": {
+        "self": "/brandUser/1"
+      }
+    },
+    {
+      "type": "countries",
+      "id": "127",
+      "attributes": {
+        "countryName": "Cambodia",
+        "countryCode": "116",
+        "isoCountryName": "Cambodia",
+        "isoCountryCode": "KH"
+      },
+      "links": {
+        "self": "/country/127"
+      }
+    },
+    {
+      "type": "organizations",
+      "id": "4781102",
+      "attributes": {
+        "userGuid": "f9f0adaf-e6dc-4b10-bcd5-674fb1f7d00b",
+        "isActive": true,
+        "currencyName": "Cambodian Riel",
+        "organizationName": "Clean24 Veng Sreng",
+        "createdAt": "2026-03-26T13:53:06.98242",
+        "createdBy": 1,
+        "updatedAt": "2026-03-26T13:55:50.055763",
+        "updatedBy": 156798,
+        "canSms": false,
+        "organizationAlgoliaSecuredApiKey": "Mjk3NjY1MTQ4OTQwODNmYTEwNDQ2MjNhODUyZDhlNmRmOTM5OTFiNDdlNzAzNmU0MjAwMDQ3NGYzODJmNTIzM2ZpbHRlcnM9X3RhZ3MlM0FvcmdJZF80NzgxMTAy",
+        "weightUnitLookupKey": "KILOGRAM",
+        "isAtrium": false,
+        "isMeteredLaundry": false,
+        "isIncludedLaundry": false
+      },
+      "relationships": {
+        "userRoleType": {
+          "data": {
+            "type": "user-role-types",
+            "id": "ORGANIZATION_FRANCHISE_OWNER"
+          }
+        }
+      },
+      "links": {
+        "self": "/organization/4781102"
+      }
+    },
+    {
+      "type": "organization-user-role-types",
+      "id": "ORGANIZATION_FRANCHISE_OWNER",
+      "links": {
+        "self": "/organizationUserRoleType/ORGANIZATION_FRANCHISE_OWNER"
+      }
+    },
+    {
+      "type": "organization-users",
+      "id": "4781102",
+      "links": {
+        "self": "/organizationUser/4781102"
+      }
+    },
+    {
+      "type": "organization-user-roles",
+      "id": "4799991",
+      "links": {
+        "self": "/organizationUserRole/4799991"
+      }
+    },
+    {
+      "type": "roles",
+      "id": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+      "attributes": {
+        "userGuid": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+        "firstName": "Panhcharoth",
+        "lastName": "Penh",
+        "isActive": true,
+        "organizationName": "Clean24 Veng Sreng",
+        "organizationIsActive": true,
+        "relationshipType": "EMPLOYMENT",
+        "userRoleIsActive": true,
+        "createdAt": "2026-07-06T03:58:49.242769",
+        "createdBy": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+        "updatedAt": "2026-08-06T14:32:17.473976",
+        "organizationAlgoliaSecuredApiKey": "Mjk3NjY1MTQ4OTQwODNmYTEwNDQ2MjNhODUyZDhlNmRmOTM5OTFiNDdlNzAzNmU0MjAwMDQ3NGYzODJmNTIzM2ZpbHRlcnM9X3RhZ3MlM0FvcmdJZF80NzgxMTAy",
+        "userIsHidden": false,
+        "isEmailVerified": true,
+        "userRelationshipIsActive": true,
+        "marketingOptIn": true,
+        "universalOptOutSms": false,
+        "universalOptOutEmail": false,
+        "loginIsActive": true
+      },
+      "relationships": {
+        "userRoleType": {
+          "data": {
+            "type": "user-role-types",
+            "id": "PERSON_EMPLOYEE"
+          }
+        },
+        "organizationUserRoleType": {
+          "data": {
+            "type": "organization-user-role-types",
+            "id": "ORGANIZATION_FRANCHISE_OWNER"
+          }
+        },
+        "organizationUser": {
+          "data": {
+            "type": "organization-users",
+            "id": "4781102"
+          }
+        },
+        "userRole": {
+          "data": {
+            "type": "user-roles",
+            "id": "5060304"
+          }
+        },
+        "organizationUserRole": {
+          "data": {
+            "type": "organization-user-roles",
+            "id": "4799991"
+          }
+        }
+      },
+      "links": {
+        "self": "/roles/cdaa3761-eccf-42ae-bf16-cf838597d844"
+      }
+    },
+    {
+      "type": "user-role-types",
+      "id": "PERSON_EMPLOYEE",
+      "links": {
+        "self": "/userRoleType/PERSON_EMPLOYEE"
+      }
+    },
+    {
+      "type": "user-roles",
+      "id": "5060304",
+      "links": {
+        "self": "/userRole/5060304"
+      }
+    },
+    {
+      "type": "email-address-types",
+      "id": "EMAIL_PRIMARY",
+      "attributes": {
+        "typeName": "Primary Email"
+      },
+      "links": {
+        "self": "/emailAddressType/EMAIL_PRIMARY"
+      }
+    },
+    {
+      "type": "users",
+      "id": "1",
+      "links": {
+        "self": "/users/1"
+      }
+    },
+    {
+      "type": "email-addresses",
+      "id": "8472379",
+      "attributes": {
+        "emailAddress": "panhcharoth@hotmail.com",
+        "isVerified": false,
+        "updatedAt": "2026-07-06T03:58:49.242769",
+        "isActive": true,
+        "userGuid": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+        "createdAt": "2026-07-06T03:58:49.242769"
+      },
+      "relationships": {
+        "emailAddressType": {
+          "data": {
+            "type": "email-address-types",
+            "id": "EMAIL_PRIMARY"
+          }
+        },
+        "createdBy": {
+          "data": {
+            "type": "users",
+            "id": "1"
+          }
+        },
+        "user": {
+          "data": {
+            "type": "users",
+            "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+          }
+        }
+      },
+      "links": {
+        "self": "/emailAddresses/8472379"
+      }
+    },
+    {
+      "type": "users",
+      "id": "98f02605-86c3-4c30-997f-d23c061224ca",
+      "links": {
+        "self": "/users/98f02605-86c3-4c30-997f-d23c061224ca"
+      }
+    },
+    {
+      "type": "user-role-types",
+      "id": "ORGANIZATION_FRANCHISE_OWNER",
+      "links": {
+        "self": "/userRoleType/ORGANIZATION_FRANCHISE_OWNER"
+      }
+    },
+    {
+      "type": "geo-boundaries",
+      "id": "23915",
+      "relationships": {
+        "geoBoundaryType": {
+          "data": {
+            "type": "geo-boundary-types",
+            "id": "FUNDS_ROOT"
+          }
+        }
+      },
+      "links": {
+        "self": "/geoBoundary/23915"
+      }
+    },
+    {
+      "type": "user-accounts",
+      "id": "4176719",
+      "links": {
+        "self": "/userAccount/4176719"
+      }
+    },
+    {
+      "type": "geo-boundary-types",
+      "id": "FUNDS_ROOT",
+      "links": {
+        "self": "/geoBoundaryType/FUNDS_ROOT"
+      }
+    },
+    {
+      "type": "sub-accounts",
+      "id": "213198948",
+      "attributes": {
+        "createdAt": "2026-07-06T04:22:23.276603",
+        "updatedAt": "2026-07-06T04:22:23.276603",
+        "rewardsPoints": 0,
+        "promotionalCredit": 0,
+        "appliedAmountIsRewardsCredit": false,
+        "balance": 0
+      },
+      "relationships": {
+        "userAccount": {
+          "data": {
+            "type": "user-accounts",
+            "id": "4176719"
+          }
+        },
+        "geoBoundary": {
+          "data": {
+            "type": "geo-boundaries",
+            "id": "23915"
+          }
+        }
+      },
+      "links": {
+        "self": "/subAccounts/213198948"
+      }
+    },
+    {
+      "type": "accounts",
+      "id": "4176719",
+      "attributes": {
+        "autoReplenishmentEnabled": false,
+        "replenishmentMinimumValueAmount": 0,
+        "createdAt": "2026-07-06T04:22:23.276603",
+        "replenishmentValueAmount": 0
+      },
+      "relationships": {
+        "createdBy": {
+          "data": {
+            "type": "users",
+            "id": "98f02605-86c3-4c30-997f-d23c061224ca"
+          }
+        },
+        "user": {
+          "data": {
+            "type": "users",
+            "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+          }
+        },
+        "organization": {
+          "data": {
+            "type": "organizations",
+            "id": "4781102"
+          }
+        },
+        "geoBoundary": {
+          "data": {
+            "type": "geo-boundaries",
+            "id": "23915"
+          }
+        },
+        "subAccounts": {
+          "data": [
+            {
+              "type": "sub-accounts",
+              "id": "213198948"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "/accounts/4176719"
+      }
+    },
+    {
+      "type": "phone-number-types",
+      "id": "PHONE_MOBILE",
+      "attributes": {
+        "typeName": "Mobile Phone"
+      },
+      "links": {
+        "self": "/phoneNumberType/PHONE_MOBILE"
+      }
+    },
+    {
+      "type": "phone-numbers",
+      "id": "8472380",
+      "attributes": {
+        "telecomInternationalCode": "855",
+        "telecomAreaCode": "17",
+        "telecomContactNumber": "986356",
+        "isVerified": false,
+        "isActive": true,
+        "userGuid": "cdaa3761-eccf-42ae-bf16-cf838597d844",
+        "phoneNumber": "85517986356"
+      },
+      "relationships": {
+        "phoneNumberType": {
+          "data": {
+            "type": "phone-number-types",
+            "id": "PHONE_MOBILE"
+          }
+        },
+        "user": {
+          "data": {
+            "type": "users",
+            "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+          }
+        }
+      },
+      "links": {
+        "self": "/phoneNumbers/8472380"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "1",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_SELECT_A_LOCATION",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/1"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "2",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/2"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "3",
+      "attributes": {
+        "lookupKey": "SUMMARY_SUBSCRIPTION",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/3"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "4",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_TOTAL_REVENUE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/4"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "5",
+      "attributes": {
+        "lookupKey": "LOCATIONS_LIST",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/5"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "6",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_DAILY_REVENUE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/6"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "7",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_TURNS_PER_DAY_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/7"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "8",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_REVENUE_BY_MACHINE_SIZES_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/8"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "9",
+      "attributes": {
+        "lookupKey": "MACHINES_PROGRAMS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/9"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "10",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_TURNS_PER_DAY_BREAKDOWN_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/10"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "14",
+      "attributes": {
+        "lookupKey": "SUMMARY_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/14"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "15",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/15"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "16",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_DAILY_REVENUE_KPI",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/16"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "17",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_EDIT_DAILY_REVENUE_KPI",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/17"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "18",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_LOCATION_REVENUE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/18"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "19",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_WASHER_REVENUE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/19"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "20",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_DRYER_REVENUE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/20"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "21",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_TURNS_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/21"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "22",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_TURNS_PER_DAY_KPI",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/22"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "23",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_EDIT_TURNS_PER_DAY_KPI",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/23"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "24",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_HISTORICAL_DATA",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/24"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "25",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_ADDITIONAL_CYCLES_REPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/25"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "26",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_ADDITIONAL_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/26"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "27",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_AVERAGE_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/27"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "28",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_COMMON_DIAGNOSIS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/28"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "29",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_CYCLE_USAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/29"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "30",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_DETAILED_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/30"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "31",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_ERROR_DIAGNOSTIC",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/31"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "32",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_FREE_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/32"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "33",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_OPERATION",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/33"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "34",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_SECURITY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/34"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "35",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_SPECIAL_VEND",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/35"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "36",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_TOTAL_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/36"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "37",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_TURNS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/37"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "38",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_COIN_VAULT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/38"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "39",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_ERROR_HISTORY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/39"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "40",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_FUNDS_DEPOSIT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/40"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "41",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_INCOME_STATEMENT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/41"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "42",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_LIFETIME_OPERATION",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/42"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "43",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_DRAIN_TIME",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/43"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "44",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_FILL_TIME",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/44"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "45",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_SECURITY_DATA",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/45"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "46",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_SETUP",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/46"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "47",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_USER_ACCOUNT_BALANCE_CHANGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/47"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "48",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_PRICING_OVERVIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/48"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "49",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_LOCATION_AND_REVENUE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/49"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "50",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_WATER_USAGE_DETAIL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/50"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "51",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_REFUNDS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/51"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "52",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_REWARDS_EARNED",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/52"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "53",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_REWARDS_SPENT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/53"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "54",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_VALUE_STATION",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/54"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "55",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_NEW_USERS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/55"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "56",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_DOWNLOAD_REPORT_TYPE_CSV",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/56"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "57",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_STORE_REVENUE_AND_REWARDS_QB_READY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/57"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "58",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/58"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "76",
+      "attributes": {
+        "lookupKey": "MACHINES_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/76"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "77",
+      "attributes": {
+        "lookupKey": "MACHINES_PROGRAMS_VIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/77"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "78",
+      "attributes": {
+        "lookupKey": "MACHINES_PROGRAM_MANAGE_PROGRAM",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/78"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "79",
+      "attributes": {
+        "lookupKey": "MACHINES_PROGRAM_SEND_PROGRAM",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/79"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "80",
+      "attributes": {
+        "lookupKey": "MACHINES_DIAGNOSTICS_VIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/80"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "82",
+      "attributes": {
+        "lookupKey": "CUSTOMERS_ORDERS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/82"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "85",
+      "attributes": {
+        "lookupKey": "CUSTOMERS_ORDERS_CREATE_NOTE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/85"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "92",
+      "attributes": {
+        "lookupKey": "EMPLOYEES_SCHEDULE_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/92"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "94",
+      "attributes": {
+        "lookupKey": "EMPLOYEES_EDIT_SCHEDULE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/94"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "102",
+      "attributes": {
+        "lookupKey": "CRM_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/102"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "103",
+      "attributes": {
+        "lookupKey": "CRM_ANALYTICS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/103"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "104",
+      "attributes": {
+        "lookupKey": "CRM_ANALYTICS_DOWNLOAD",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/104"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "105",
+      "attributes": {
+        "lookupKey": "CRM_CAMPAIGNS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/105"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "106",
+      "attributes": {
+        "lookupKey": "CRM_CREATE_CAMPAIGN",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/106"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "107",
+      "attributes": {
+        "lookupKey": "CRM_EDIT_CAMPAIGN",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/107"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "108",
+      "attributes": {
+        "lookupKey": "CRM_DELETE_CAMPAIGN",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/108"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "109",
+      "attributes": {
+        "lookupKey": "CRM_MANAGE_CAMPAIGN_SCHEDULE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/109"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "110",
+      "attributes": {
+        "lookupKey": "CRM_CAMPAIGN_RUN_DOWNLOAD",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/110"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "111",
+      "attributes": {
+        "lookupKey": "PRODUCTS_LIST_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/111"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "112",
+      "attributes": {
+        "lookupKey": "SERVICES_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/112"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "113",
+      "attributes": {
+        "lookupKey": "ITEM_CREATE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/113"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "114",
+      "attributes": {
+        "lookupKey": "ITEM_EDIT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/114"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "115",
+      "attributes": {
+        "lookupKey": "ITEM_MANAGE_ALERT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/115"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "116",
+      "attributes": {
+        "lookupKey": "INVENTORY_MANAGE_ALERT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/116"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "117",
+      "attributes": {
+        "lookupKey": "INVENTORY_UPDATE_AMOUNT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/117"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "118",
+      "attributes": {
+        "lookupKey": "INVENTORY_UPDATE_PRICE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/118"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "119",
+      "attributes": {
+        "lookupKey": "SERVICES_CREATE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/119"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "120",
+      "attributes": {
+        "lookupKey": "SERVICES_EDIT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/120"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "121",
+      "attributes": {
+        "lookupKey": "SERVICES_DELETE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/121"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "122",
+      "attributes": {
+        "lookupKey": "SERVICES_IMPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/122"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "123",
+      "attributes": {
+        "lookupKey": "SERVICE_LOCATION_UPDATE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/123"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "124",
+      "attributes": {
+        "lookupKey": "SERVICE_LOCATION_DELETE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/124"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "125",
+      "attributes": {
+        "lookupKey": "RETAIL_CONTROL_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/125"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "126",
+      "attributes": {
+        "lookupKey": "BILLING_RENEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/126"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "127",
+      "attributes": {
+        "lookupKey": "BILLING_VIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/127"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "137",
+      "attributes": {
+        "lookupKey": "MACHINES_COMMAND_EDIT_COIN_VAULT_SIZE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/137"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "149",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CRM",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/149"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "150",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CYCLE_COUNT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/150"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "151",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_VEND",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/151"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "152",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_RETAIL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/152"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "153",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_STORE_STOCK",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/153"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "154",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_FLOAT_STATUS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/154"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "156",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_ORGANIZATION_REVENUE_BY_MONTH",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/156"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "157",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_TIME_CLOCK",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/157"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "158",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_DETAILED_VENDING_BY_DAY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/158"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "161",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_SALES_TAX",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/161"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "164",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_VALUE_CENTER_COLLECTIONS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/164"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "165",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_WDF_STATUS_REVENUE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/165"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "166",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_REMOTE_START_TRACKING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/166"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "168",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_APP_ADOPTION_RATE_REPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/168"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "169",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EFS_STATISTICS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/169"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "170",
+      "attributes": {
+        "lookupKey": "RETAIL_POS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/170"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "171",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_MANAGE_INVENTORY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/171"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "172",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_LOGOUT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/172"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "173",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_REFUND",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/173"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "174",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_OPEN_CASH_DRAWER",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/174"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "175",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_CANCEL_ACTIVE_ORDER",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/175"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "176",
+      "attributes": {
+        "lookupKey": "RETAIL_POS_MANAGE_OPTIONS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/176"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "178",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_WHAT_SOLD",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/178"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "180",
+      "attributes": {
+        "lookupKey": "TIME_CLOCK_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/180"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "181",
+      "attributes": {
+        "lookupKey": "TIME_CLOCK_MANAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/181"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "183",
+      "attributes": {
+        "lookupKey": "CRM_APPROVE_CAMPAIGN",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/183"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "184",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EFS_REWARDS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/184"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "185",
+      "attributes": {
+        "lookupKey": "MACHINES_CAN_MANAGE_GATEWAYS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/185"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "187",
+      "attributes": {
+        "lookupKey": "MACHINES_MACHINE_MANAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/187"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "188",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_OUTAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/188"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "189",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CAMPUS_CARD_RECON",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/189"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "190",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MONTHLY_RECON",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/190"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "192",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_DAILY_RECON",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/192"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "193",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MONTHLY_OVERVIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/193"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "196",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_PEAK_TIMES",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/196"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "199",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_STORE_OVERVIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/199"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "200",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_DAILY_OVERVIEW",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/200"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "201",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_POS_STATUS_REVENUE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/201"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "202",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_AUDIT_PRODUCTIVITY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/202"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "203",
+      "attributes": {
+        "lookupKey": "LOCATIONS_MANAGE_TARGET_HOURS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/203"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "205",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_LOGIN",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/205"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "206",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_MOBILE_VENDING",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/206"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "207",
+      "attributes": {
+        "lookupKey": "RETAIL_VIEW_ORDER_STATUS_NOTIFICATIONS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/207"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "208",
+      "attributes": {
+        "lookupKey": "RETAIL_MANAGE_ORDER_STATUS_NOTIFICATIONS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/208"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "210",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_PEAK_TIMES_BY_HOUR",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/210"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "211",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_SOLD",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/211"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "212",
+      "attributes": {
+        "lookupKey": "LOCATIONS_MANAGE_WEEKLY_SCHEDULE_GOAL_HOURS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/212"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "213",
+      "attributes": {
+        "lookupKey": "EMPLOYEE_GOALS_VIEW_ROLE_SALES_GOAL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/213"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "214",
+      "attributes": {
+        "lookupKey": "EMPLOYEE_GOALS_VIEW_EMPLOYEE_SALES_GOAL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/214"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "215",
+      "attributes": {
+        "lookupKey": "EMPLOYEE_GOALS_EDIT_ROLE_SALES_GOAL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/215"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "216",
+      "attributes": {
+        "lookupKey": "EMPLOYEE_GOALS_EDIT_EMPLOYEE_SALES_GOAL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/216"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "217",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_SALES_GOAL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/217"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "218",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_EMPLOYEE_SCHEDULE_STATS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/218"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "219",
+      "attributes": {
+        "lookupKey": "EMPLOYEE_GOALS_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/219"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "221",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_CAPACITY_UTILIZATION_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/221"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "222",
+      "attributes": {
+        "lookupKey": "LOCATIONS_CONFIGURE_VIEW_PAGE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/222"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "223",
+      "attributes": {
+        "lookupKey": "LOCATIONS_CONFIGURE_EDIT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/223"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "227",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_TOUCH_MODIFIERS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/227"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "230",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_PRODUCTIVITY_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/230"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "231",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_OPERATIONAL_EXPENSE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/231"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "232",
+      "attributes": {
+        "lookupKey": "SUMMARY_CHARTS_VIEW_EFFICIENCY_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/232"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "233",
+      "attributes": {
+        "lookupKey": "MACHINES_PROGRAMS_VIEW_TRACEABILITY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/233"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "234",
+      "attributes": {
+        "lookupKey": "MACHINES_COMMAND_START_TRACE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/234"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "236",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_OPL_MAINTENANCE_SUMMARY_REPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/236"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "240",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CUSTOMER_ACCOUNT_BALANCE_REPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/240"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "241",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CYCLE_HISTORY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/241"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "242",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_CAPACITY_UTILIZATION_DETAIL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/242"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "243",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_DATA",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/243"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "244",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_COMMUNITY_GROUP_MEMBER_SPEND_REPORT",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/244"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "248",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_PEAK_TIMES_CHARTS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/248"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "249",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_USAGE_HISTORY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/249"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "250",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_MACHINE_USAGE_CHART",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/250"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "251",
+      "attributes": {
+        "lookupKey": "SUMMARY_VIEW_OWNER_APP",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/251"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "252",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_OPL_LAUNDRY_OPERATIONS_DETAIL",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/252"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "253",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_OPL_LAUNDRY_OPERATIONS_SUMMARY",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/253"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "254",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_OPL_EVENTS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/254"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "269",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_FIRELINC_CYCLE",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/269"
+      }
+    },
+    {
+      "type": "security-functional-areas",
+      "id": "270",
+      "attributes": {
+        "lookupKey": "SUMMARY_REPORTS_VIEW_SPW_TRANSACTIONS",
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "links": {
+        "self": "/securityFunctionalAreas/270"
+      }
+    },
+    {
+      "type": "security-roles",
+      "id": "3845",
+      "attributes": {
+        "name": "Shop Owner",
+        "remoteStartThreshold": -1,
+        "canForceRemoteStart": false,
+        "orderRemoteStartPctThreshold": -1,
+        "canForceOrderRemoteStart": false,
+        "employeeUserAccountBalanceCreditThreshold": -1,
+        "canForceEmployeeUserAccountBalanceCredit": false,
+        "employeeUserAccountRewardsCreditThreshold": -1,
+        "canForceEmployeeUserAccountRewardsCredit": false,
+        "organizationId": "4781102",
+        "isSystemDefault": false,
+        "createdBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "createdAt": "2026-07-06T04:17:33",
+        "updatedBy": "98f02605-86c3-4c30-997f-d23c061224ca",
+        "updatedAt": "2026-07-06T04:19:05"
+      },
+      "relationships": {
+        "forceRemoteStartAlertRoles": {
+          "data": []
+        },
+        "forceOrderRemoteStartAlertRoles": {
+          "data": []
+        },
+        "forceEmployeeUserAccountBalanceCreditAlertRoles": {
+          "data": []
+        },
+        "forceEmployeeUserAccountRewardsCreditAlertRoles": {
+          "data": []
+        },
+        "users": {
+          "data": [
+            {
+              "type": "users",
+              "id": "cdaa3761-eccf-42ae-bf16-cf838597d844"
+            }
+          ]
+        },
+        "securityFunctionalAreas": {
+          "data": [
+            {
+              "type": "security-functional-areas",
+              "id": "1"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "2"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "3"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "4"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "5"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "6"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "7"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "8"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "9"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "10"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "14"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "15"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "16"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "17"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "18"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "19"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "20"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "21"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "22"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "23"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "24"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "25"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "26"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "27"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "28"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "29"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "30"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "31"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "32"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "33"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "34"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "35"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "36"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "37"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "38"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "39"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "40"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "41"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "42"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "43"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "44"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "45"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "46"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "47"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "48"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "49"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "50"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "51"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "52"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "53"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "54"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "55"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "56"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "57"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "58"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "76"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "77"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "78"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "79"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "80"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "82"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "85"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "92"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "94"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "102"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "103"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "104"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "105"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "106"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "107"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "108"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "109"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "110"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "111"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "112"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "113"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "114"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "115"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "116"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "117"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "118"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "119"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "120"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "121"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "122"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "123"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "124"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "125"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "126"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "127"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "137"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "149"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "150"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "151"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "152"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "153"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "154"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "156"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "157"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "158"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "161"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "164"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "165"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "166"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "168"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "169"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "170"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "171"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "172"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "173"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "174"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "175"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "176"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "178"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "180"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "181"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "183"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "184"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "185"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "187"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "188"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "189"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "190"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "192"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "193"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "196"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "199"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "200"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "201"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "202"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "203"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "205"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "206"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "207"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "208"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "210"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "211"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "212"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "213"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "214"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "215"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "216"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "217"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "218"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "219"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "221"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "222"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "223"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "227"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "230"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "231"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "232"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "233"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "234"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "236"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "240"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "241"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "242"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "243"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "244"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "248"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "249"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "250"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "251"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "252"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "253"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "254"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "269"
+            },
+            {
+              "type": "security-functional-areas",
+              "id": "270"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "/securityRoles/3845"
+      }
+    }
+  ],
+  "meta": {
+    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhbmhjaGFyb3RoQGhvdG1haWwuY29tIiwiaWQiOiJjZGFhMzc2MS1lY2NmLTQyYWUtYmYxNi1jZjgzODU5N2Q4NDQiLCJvcmdhbml6YXRpb25zIjpbNDc4MTEwMl0sImlhdCI6MTc4NjAyODMzOCwiZXhwIjoxNzkzODA0MzM4fQ.lBVJrtTkTUQ8Cb5iyuaPnSxAJceSmfXi4A4cUndmxqE"
+  }
+}
