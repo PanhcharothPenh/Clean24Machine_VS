@@ -3,6 +3,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional, List, Set
+from config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,11 @@ class StateTracker:
         self.states: Dict[str, Dict[str, Any]] = self.data.get("states", {})
         self.daily_revenue: Dict[str, Any] = self.data.get("daily_revenue", {})
         self.subscribed_chats: Set[str] = self._load_chats()
+
+        # Always ensure default configured chat IDs are added
+        for cid in Config.DEFAULT_CHAT_IDS:
+            self.subscribed_chats.add(cid)
+        self.save_chats()
 
     def _load_states(self) -> Dict[str, Any]:
         if self.db_path.exists():
@@ -49,7 +55,7 @@ class StateTracker:
                     return set(chats)
             except Exception as e:
                 logger.error(f"Error loading chats DB {self.chats_path}: {e}")
-        return set()
+        return set(Config.DEFAULT_CHAT_IDS)
 
     def save_chats(self):
         try:
@@ -67,9 +73,6 @@ class StateTracker:
         self.save_chats()
 
     def update_machine_state(self, sid: str, new_status_data: Dict[str, Any]) -> Tuple[bool, Optional[Dict[str, Any]], Dict[str, Any]]:
-        """
-        Updates stored state for a machine and determines transition events.
-        """
         new_status = new_status_data.get("status", "UNKNOWN")
         if new_status in ["AUTH_REQUIRED", "UNKNOWN"]:
             return False, None, new_status_data
