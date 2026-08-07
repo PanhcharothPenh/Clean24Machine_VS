@@ -2,6 +2,11 @@ import asyncio
 import logging
 import os
 import sys
+# Set console encoding to UTF-8 to prevent UnicodeEncodeError on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime, time
@@ -53,8 +58,6 @@ def start_healthcheck_server():
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
 tracker = StateTracker()
 
-if Config.TELEGRAM_CHAT_ID and Config.TELEGRAM_CHAT_ID != "your_chat_id_or_channel_id_here":
-    tracker.add_subscriber(Config.TELEGRAM_CHAT_ID)
 
 
 KHMER_MONTHS = {
