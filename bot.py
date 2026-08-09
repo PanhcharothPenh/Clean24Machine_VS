@@ -54,6 +54,26 @@ def start_healthcheck_server():
     except Exception as e:
         logger.error(f"Error running healthcheck server: {e}")
 
+def self_ping_loop():
+    import time as time_mod
+    import requests
+    url = os.environ.get("RENDER_EXTERNAL_URL")
+    if not url:
+        logger.info("RENDER_EXTERNAL_URL environment variable is not set. Self-pinging is disabled.")
+        return
+
+    logger.info(f"Self-pinging loop started. Targeting: {url}")
+    # Wait for the healthcheck HTTP server to start
+    time_mod.sleep(15)
+
+    while True:
+        try:
+            res = requests.get(url, timeout=15)
+            logger.info(f"Self-ping status: {res.status_code}")
+        except Exception as e:
+            logger.error(f"Error during self-ping: {e}")
+        time_mod.sleep(600)
+
 # Global instances
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
 tracker = StateTracker()
@@ -421,6 +441,7 @@ def main():
 
     # Start background HTTP Healthcheck Server for Render Free Web Service ($0/mo)
     threading.Thread(target=start_healthcheck_server, daemon=True).start()
+    threading.Thread(target=self_ping_loop, daemon=True).start()
 
     app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).post_init(post_init).build()
 
