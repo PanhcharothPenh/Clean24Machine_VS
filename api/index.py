@@ -90,6 +90,12 @@ async def init_bot_app():
             logger.error(f"Error executing post_init configuration: {e}")
         initialized = True
 
+@app.before_request
+def debug_request():
+    import sys
+    print(f"DEBUG REQUEST - Path: {request.path}, Method: {request.method}, Args: {request.args}", file=sys.stderr)
+    print(f"DEBUG REQUEST - PATH_INFO: {request.environ.get('PATH_INFO')}, SCRIPT_NAME: {request.environ.get('SCRIPT_NAME')}", file=sys.stderr)
+
 @app.route("/", methods=["GET"])
 def home():
     from sq_client import MACHINE_METADATA
