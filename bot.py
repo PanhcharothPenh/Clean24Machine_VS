@@ -7,8 +7,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
-import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime, time
 import pytz
 from typing import List, Set
@@ -34,45 +32,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Dummy Healthcheck HTTP Server for Render Free Web Services ($0/mo)
-class HealthCheckHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/plain; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(b"Clean24 Speed Queen Bot is Live and Running 24/7!")
-
-    def log_message(self, format, *args):
-        return
-
-def start_healthcheck_server():
-    port = int(os.environ.get("PORT", 8080))
-    try:
-        server = HTTPServer(("0.0.0.0", port), HealthCheckHandler)
-        logger.info(f"Healthcheck HTTP server listening on port {port} for Free Web Service hosting.")
-        server.serve_forever()
-    except Exception as e:
-        logger.error(f"Error running healthcheck server: {e}")
-
-def self_ping_loop():
-    import time as time_mod
-    import requests
-    url = os.environ.get("RENDER_EXTERNAL_URL")
-    if not url:
-        logger.info("RENDER_EXTERNAL_URL environment variable is not set. Self-pinging is disabled.")
-        return
-
-    logger.info(f"Self-pinging loop started. Targeting: {url}")
-    # Wait for the healthcheck HTTP server to start
-    time_mod.sleep(15)
-
-    while True:
-        try:
-            res = requests.get(url, timeout=15)
-            logger.info(f"Self-ping status: {res.status_code}")
-        except Exception as e:
-            logger.error(f"Error during self-ping: {e}")
-        time_mod.sleep(600)
 
 # Global instances
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
@@ -439,9 +398,6 @@ def main():
         print("❌ TELEGRAM_BOT_TOKEN missing in .env")
         sys.exit(1)
 
-    # Start background HTTP Healthcheck Server for Render Free Web Service ($0/mo)
-    threading.Thread(target=start_healthcheck_server, daemon=True).start()
-    threading.Thread(target=self_ping_loop, daemon=True).start()
 
     app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).post_init(post_init).build()
 
