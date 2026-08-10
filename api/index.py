@@ -37,6 +37,9 @@ class VercelPathMiddleware:
         self.wsgi_app = wsgi_app
 
     def __call__(self, environ, start_response):
+        import sys
+        # Log WSGI environment variables for path resolution debugging
+        print("VERCEL WSGI ENVIRON:", {k: v for k, v in environ.items() if isinstance(v, (str, int, float))}, file=sys.stderr)
         matched_path = environ.get("HTTP_X_MATCHED_PATH")
         if matched_path:
             environ["PATH_INFO"] = matched_path
