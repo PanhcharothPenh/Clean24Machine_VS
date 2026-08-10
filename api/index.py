@@ -29,8 +29,20 @@ from bot import (
     tracker
 )
 
-# Initialize Flask application
 app = Flask(__name__)
+
+# WSGI Middleware to fix Vercel routing path issue by extracting the original request path from the X-Matched-Path header
+class VercelPathMiddleware:
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        matched_path = environ.get("HTTP_X_MATCHED_PATH")
+        if matched_path:
+            environ["PATH_INFO"] = matched_path
+        return self.wsgi_app(environ, start_response)
+
+app.wsgi_app = VercelPathMiddleware(app.wsgi_app)
 
 # Initialize Telegram Application
 bot_app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).build()
