@@ -54,41 +54,24 @@ class VercelPathMiddleware:
 
 app.wsgi_app = VercelPathMiddleware(app.wsgi_app)
 
-# Initialize Telegram Application
-bot_app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).build()
-
-# Configure Handlers (same as in bot.py)
-bot_app.add_handler(CommandHandler("start", start_command))
-bot_app.add_handler(CommandHandler("help", help_command))
-bot_app.add_handler(CommandHandler("status", status_command))
-bot_app.add_handler(CommandHandler("revenue", revenue_command))
-bot_app.add_handler(CommandHandler("check", check_command))
-bot_app.add_handler(CommandHandler("subscribe", subscribe_command))
-bot_app.add_handler(CommandHandler("unsubscribe", unsubscribe_command))
-bot_app.add_handler(CommandHandler("machines", machines_command))
-bot_app.add_handler(CommandHandler("teststart", teststart_command))
-bot_app.add_handler(CommandHandler("testend", testend_command))
-bot_app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply_text_button_handler))
+def make_bot_app():
+    bot_app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).build()
+    bot_app.add_handler(CommandHandler("start", start_command))
+    bot_app.add_handler(CommandHandler("help", help_command))
+    bot_app.add_handler(CommandHandler("status", status_command))
+    bot_app.add_handler(CommandHandler("revenue", revenue_command))
+    bot_app.add_handler(CommandHandler("check", check_command))
+    bot_app.add_handler(CommandHandler("subscribe", subscribe_command))
+    bot_app.add_handler(CommandHandler("unsubscribe", unsubscribe_command))
+    bot_app.add_handler(CommandHandler("machines", machines_command))
+    bot_app.add_handler(CommandHandler("teststart", teststart_command))
+    bot_app.add_handler(CommandHandler("testend", testend_command))
+    bot_app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply_text_button_handler))
+    return bot_app
 
 # Helper to run async code synchronously in Flask handler threads
 def run_async(coro):
     return asyncio.run(coro)
-
-# Global flag to track initialization status
-initialized = False
-
-async def init_bot_app():
-    global initialized
-    if not initialized:
-        # Run standard python-telegram-bot application lifecycle initialization
-        await bot_app.initialize()
-        await bot_app.start()
-        # Initialize menu commands if defined
-        try:
-            await post_init(bot_app)
-        except Exception as e:
-            logger.error(f"Error executing post_init configuration: {e}")
-        initialized = True
 
 @app.before_request
 def debug_request():
@@ -617,10 +600,22 @@ def webhook():
     Inbound Webhook endpoint for Telegram updates.
     """
     try:
-        run_async(init_bot_app())
         update_json = request.get_json(force=True)
-        update = Update.de_json(update_json, bot_app.bot)
-        run_async(bot_app.process_update(update))
+        bot_app = make_bot_app()
+        
+        async def main_task():
+            await bot_app.initialize()
+            await bot_app.start()
+            try:
+                await post_init(bot_app)
+            except Exception as pe:
+                logger.error(f"Error in post_init: {pe}")
+            
+            update = Update.de_json(update_json, bot_app.bot)
+            await bot_app.process_update(update)
+            await bot_app.shutdown()
+            
+        run_async(main_task())
         return jsonify({"status": "ok"}), 200
     except Exception as e:
         logger.error(f"Error processing webhook update: {e}")
@@ -632,9 +627,16 @@ def cron_check():
     Cron endpoint called every 60 seconds (by external pinger) to check machine state transitions.
     """
     try:
-        run_async(init_bot_app())
-        logger.info("Triggering periodic status check via cron...")
-        run_async(run_monitoring_check(bot_app))
+        bot_app = make_bot_app()
+        
+        async def main_task():
+            await bot_app.initialize()
+            await bot_app.start()
+            logger.info("Triggering periodic status check via cron...")
+            await run_monitoring_check(bot_app)
+            await bot_app.shutdown()
+            
+        run_async(main_task())
         return jsonify({"status": "monitoring check completed"}), 200
     except Exception as e:
         logger.error(f"Error executing periodic status check cron: {e}")
@@ -646,9 +648,16 @@ def cron_revenue():
     Cron endpoint called daily (at 10:40 PM Phnom Penh time / 3:40 PM UTC) to send the revenue card.
     """
     try:
-        run_async(init_bot_app())
-        logger.info("Triggering daily scheduled revenue card broadcast...")
-        run_async(send_revenue_report_card(bot_app, tracker.subscribed_chats))
+        bot_app = make_bot_app()
+        
+        async def main_task():
+            await bot_app.initialize()
+            await bot_app.start()
+            logger.info("Triggering daily scheduled revenue card broadcast...")
+            await send_revenue_report_card(bot_app, tracker.subscribed_chats)
+            await bot_app.shutdown()
+            
+        run_async(main_task())
         return jsonify({"status": "daily revenue report broadcast completed"}), 200
     except Exception as e:
         logger.error(f"Error executing daily scheduled revenue card cron: {e}")
