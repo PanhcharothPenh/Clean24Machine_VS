@@ -39,7 +39,7 @@ class VercelPathMiddleware:
     def __call__(self, environ, start_response):
         from urllib.parse import parse_qs
         query_string = environ.get("QUERY_STRING", "")
-        params = parse_qs(query_string)
+        params = parse_qs(query_string, keep_blank_values=True)
         path_list = params.get("path")
         if path_list:
             original_path = path_list[0]
