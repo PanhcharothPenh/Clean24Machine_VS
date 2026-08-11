@@ -613,6 +613,7 @@ def webhook():
             
             update = Update.de_json(update_json, bot_app.bot)
             await bot_app.process_update(update)
+            await bot_app.stop()
             await bot_app.shutdown()
             
         run_async(main_task())
@@ -634,6 +635,7 @@ def cron_check():
             await bot_app.start()
             logger.info("Triggering periodic status check via cron...")
             await run_monitoring_check(bot_app)
+            await bot_app.stop()
             await bot_app.shutdown()
             
         run_async(main_task())
@@ -655,6 +657,7 @@ def cron_revenue():
             await bot_app.start()
             logger.info("Triggering daily scheduled revenue card broadcast...")
             await send_revenue_report_card(bot_app, tracker.subscribed_chats)
+            await bot_app.stop()
             await bot_app.shutdown()
             
         run_async(main_task())
