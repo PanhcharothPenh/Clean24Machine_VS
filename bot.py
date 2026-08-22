@@ -413,7 +413,20 @@ async def post_init(application: Application) -> None:
         BotCommand("help", "❓ សៀវភៅណែនាំប្រើប្រាស់"),
     ]
     await application.bot.set_my_commands(commands)
-    logger.info("Telegram Bot Menu commands configured successfully.")
+
+    clean_desc = (
+        "🧺 Speed Queen Insights Telegram Bot (Clean24 Veng Sreng)\n\n"
+        "📊 Real-time machine status tracking (W1 - D10)\n"
+        "💰 Automated daily financial revenue reports\n"
+        "🚀 Instant machine START & END notifications"
+    )
+    try:
+        await application.bot.set_my_description(clean_desc)
+        await application.bot.set_my_short_description("Clean24 Veng Sreng Speed Queen Bot")
+    except Exception as e:
+        logger.warning(f"Could not set bot descriptions: {e}")
+
+    logger.info("Telegram Bot Menu commands and descriptions configured successfully.")
 
 
 def main():
