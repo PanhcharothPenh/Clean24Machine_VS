@@ -155,9 +155,15 @@ def build_location_status_card(data: dict) -> str:
     return "\n".join(lines).strip()
 
 
+async def auto_subscribe_update(update: Update) -> None:
+    if update and update.effective_chat:
+        chat_id = str(update.effective_chat.id)
+        tracker.add_subscriber(chat_id)
+
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await auto_subscribe_update(update)
     chat_id = str(update.effective_chat.id)
-    tracker.add_subscriber(chat_id)
 
     sq_client.login()
 
@@ -172,6 +178,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await auto_subscribe_update(update)
     msg = (
         "❓ *សៀវភៅណែនាំប្រើប្រាស់ Speed Queen Bot (Clean24 Veng Sreng)*\n\n"
         "1. **របាយការណ៍ស្ថានភាព**: ចុចលើ Button `📊 ស្ថានភាពម៉ាស៊ីន` ដើម្បីមើលស្ថានភាព W1 ដល់ D10។\n"
@@ -183,6 +190,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 async def send_status_response(update: Update) -> None:
+    await auto_subscribe_update(update)
     sids = Config.TRACKED_MACHINE_SIDS or ["1517969"]
     cards = []
     for sid in sids:
@@ -198,8 +206,7 @@ async def status_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 
 async def teststart_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    chat_id = str(update.effective_chat.id)
-    tracker.add_subscriber(chat_id)
+    await auto_subscribe_update(update)
     alert_msg = (
         "🤖 *ការជូនដំណឹងស្វ័យប្រវត្តិ*\n\n"
         "🚀 *ម៉ាស៊ីនចាប់ផ្តើមដំណើរការ! (Test Alert)*\n"
@@ -208,12 +215,17 @@ async def teststart_command(update: Update, context: ContextTypes.DEFAULT_TYPE) 
         "🔵 *ស្ថានភាព៖* កំពុងដំណើរការ\n"
         "⏱️ 35 នាទី"
     )
-    await update.message.reply_text(alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+
+    # Broadcast test alert to ALL subscribed chats
+    for cid in list(tracker.subscribed_chats):
+        try:
+            await context.application.bot.send_message(chat_id=cid, text=alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+        except Exception as e:
+            logger.error(f"Error sending teststart to chat {cid}: {e}")
 
 
 async def testend_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    chat_id = str(update.effective_chat.id)
-    tracker.add_subscriber(chat_id)
+    await auto_subscribe_update(update)
     alert_msg = (
         "🤖 *ការជូនដំណឹងស្វ័យប្រវត្តិ*\n\n"
         "🎉 *ម៉ាស៊ីនបោក/សម្ងួតរួចរាល់! (Test Alert)*\n"
@@ -221,10 +233,19 @@ async def testend_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         "🔢 *ម៉ាស៊ីន៖* W1 (9kg)\n"
         "🟢 *ស្ថានភាព៖* ទំនេរ (រួចរាល់)"
     )
-    await update.message.reply_text(alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+
+    # Broadcast test alert to ALL subscribed chats
+    for cid in list(tracker.subscribed_chats):
+        try:
+            await context.application.bot.send_message(chat_id=cid, text=alert_msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+        except Exception as e:
+            logger.error(f"Error sending testend to chat {cid}: {e}")
 
 
 async def send_revenue_report_card(app: Application, chat_ids: Set[str], update: Update = None) -> None:
+    if update:
+        await auto_subscribe_update(update)
+
     rev_report = sq_client.get_live_daily_revenue_report(room_id="23546")
     if rev_report.get("error"):
         logger.error("Error generating daily revenue report card")
@@ -249,16 +270,13 @@ async def send_revenue_report_card(app: Application, chat_ids: Set[str], update:
         f"━━━━━━━━━━━━━━━━━━"
     )
 
-    target_chats = tracker.subscribed_chats if not update else {str(update.effective_chat.id)}
-    if update:
-        await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
-    else:
-        for chat_id in list(target_chats):
-            try:
-                await app.bot.send_message(chat_id=chat_id, text=msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
-                logger.info(f"Scheduled 10:40 PM revenue report sent successfully to chat {chat_id}")
-            except Exception as e:
-                logger.error(f"Failed to send 10:40 PM revenue report to chat {chat_id}: {e}")
+    # Broadcast to ALL subscribed chats
+    for chat_id in list(tracker.subscribed_chats):
+        try:
+            await app.bot.send_message(chat_id=chat_id, text=msg, parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
+            logger.info(f"Revenue report card sent successfully to chat {chat_id}")
+        except Exception as e:
+            logger.error(f"Failed to send revenue report card to chat {chat_id}: {e}")
 
 
 async def revenue_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -266,13 +284,13 @@ async def revenue_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
 
 async def check_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await auto_subscribe_update(update)
     await run_monitoring_check(context.application)
     await send_status_response(update)
 
 
 async def subscribe_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    chat_id = str(update.effective_chat.id)
-    tracker.add_subscriber(chat_id)
+    await auto_subscribe_update(update)
     await update.message.reply_text("✅ *បានភ្ជាប់រួចរាល់!* អ្នកនឹងទទួលបានសារជូនដំណឹងភ្លាមៗរៀងរាល់ម៉ោង *10:40 PM* យប់ និងពេលម៉ាស៊ីនបោក/សម្ងួតរួចរាល់។", parse_mode="Markdown", reply_markup=get_persistent_reply_keyboard())
 
 
@@ -283,6 +301,7 @@ async def unsubscribe_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def machines_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await auto_subscribe_update(update)
     msg = (
         "🧺 *បញ្ជីម៉ាស៊ីន Clean24 Veng Sreng (១០ គ្រឿង)*:\n"
         "• `W1` - Washer Extractor 9 kg\n"
@@ -300,6 +319,7 @@ async def machines_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 
 async def reply_text_button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await auto_subscribe_update(update)
     text = update.message.text.strip()
     if text == "📊 ស្ថានភាពម៉ាស៊ីន":
         await send_status_response(update)
