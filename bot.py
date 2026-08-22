@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import sys
+import time as time_lib
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime, time
@@ -452,7 +453,20 @@ def main():
         logger.info(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
 
     logger.info("🚀 Speed Queen Insights Telegram Bot starting polling...")
-    app.run_polling(drop_pending_updates=True)
+    
+    # Auto-retry loop to handle Render zero-downtime container swaps cleanly
+    while True:
+        try:
+            app.run_polling(drop_pending_updates=True)
+            break
+        except Exception as e:
+            err_str = str(e)
+            if "Conflict" in err_str or "terminated by other getUpdates request" in err_str:
+                logger.warning("Telegram Conflict detected (old container swapping). Retrying polling in 10s...")
+                time_lib.sleep(10)
+            else:
+                logger.error(f"Fatal error in run_polling: {e}")
+                raise e
 
 
 if __name__ == "__main__":
