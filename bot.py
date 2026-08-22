@@ -1,7 +1,6 @@
 import asyncio
 import logging
 import os
-import signal
 import sys
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -58,8 +57,8 @@ def start_healthcheck_server():
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
 tracker = StateTracker()
 
-if Config.TELEGRAM_CHAT_ID and Config.TELEGRAM_CHAT_ID != "your_chat_id_or_channel_id_here":
-    tracker.add_subscriber(Config.TELEGRAM_CHAT_ID)
+for cid in getattr(Config, "DEFAULT_CHAT_IDS", []):
+    tracker.add_subscriber(cid)
 
 
 KHMER_MONTHS = {
@@ -416,7 +415,7 @@ async def post_init(application: Application) -> None:
     logger.info("Telegram Bot Menu commands configured successfully.")
 
 
-async def main_async():
+def main():
     if not Config.TELEGRAM_BOT_TOKEN or Config.TELEGRAM_BOT_TOKEN == "your_telegram_bot_token_here":
         print("❌ TELEGRAM_BOT_TOKEN missing in .env")
         sys.exit(1)
@@ -453,40 +452,7 @@ async def main_async():
         logger.info(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
 
     logger.info("🚀 Speed Queen Insights Telegram Bot starting polling...")
-    
-    # Initialize and start bot application gracefully for Cloud Docker containers
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling(drop_pending_updates=True)
-
-    # Keep application running continuously until SIGTERM or SIGINT
-    stop_event = asyncio.Event()
-    loop = asyncio.get_running_loop()
-
-    def stop_handler():
-        logger.info("Received termination signal, stopping bot gracefully...")
-        stop_event.set()
-
-    for sig in (signal.SIGTERM, signal.SIGINT):
-        try:
-            loop.add_signal_handler(sig, stop_handler)
-        except NotImplementedError:
-            pass
-
-    await stop_event.wait()
-
-    logger.info("Shutting down bot application cleanly...")
-    await app.updater.stop()
-    await app.stop()
-    await app.shutdown()
-    logger.info("Bot application shutdown complete.")
-
-
-def main():
-    try:
-        asyncio.run(main_async())
-    except (KeyboardInterrupt, SystemExit):
-        logger.info("Bot process exited.")
+    app.run_polling(drop_pending_updates=True)
 
 
 if __name__ == "__main__":
