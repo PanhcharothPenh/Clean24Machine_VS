@@ -1,12 +1,10 @@
 import asyncio
 import logging
 import os
+import signal
 import sys
-# Set console encoding to UTF-8 to prevent UnicodeEncodeError on Windows
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 from datetime import datetime, time
 import pytz
 from typing import List, Set
@@ -32,11 +30,36 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Lightweight HTTP Health Check Server for Render / Railway / Cloud Web Services
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(b"OK - Clean24 Speed Queen Bot is Live")
+
+    def do_HEAD(self):
+        self.send_response(200)
+        self.end_headers()
+
+    def log_message(self, format, *args):
+        return  # Suppress healthcheck log noise
+
+def start_healthcheck_server():
+    port = int(os.environ.get("PORT", 8080))
+    try:
+        server = HTTPServer(("0.0.0.0", port), HealthCheckHandler)
+        logger.info(f"Healthcheck HTTP server successfully bound to port {port}")
+        server.serve_forever()
+    except Exception as e:
+        logger.error(f"Error running healthcheck HTTP server on port {port}: {e}")
 
 # Global instances
 sq_client = SpeedQueenClient(email=Config.SQ_EMAIL, password=Config.SQ_PASSWORD)
 tracker = StateTracker()
 
+if Config.TELEGRAM_CHAT_ID and Config.TELEGRAM_CHAT_ID != "your_chat_id_or_channel_id_here":
+    tracker.add_subscriber(Config.TELEGRAM_CHAT_ID)
 
 
 KHMER_MONTHS = {
@@ -393,11 +416,13 @@ async def post_init(application: Application) -> None:
     logger.info("Telegram Bot Menu commands configured successfully.")
 
 
-def main():
+async def main_async():
     if not Config.TELEGRAM_BOT_TOKEN or Config.TELEGRAM_BOT_TOKEN == "your_telegram_bot_token_here":
         print("❌ TELEGRAM_BOT_TOKEN missing in .env")
         sys.exit(1)
 
+    # Start background HTTP Healthcheck Server for Render Free Web Service ($0/mo)
+    threading.Thread(target=start_healthcheck_server, daemon=True).start()
 
     app = Application.builder().token(Config.TELEGRAM_BOT_TOKEN).post_init(post_init).build()
 
@@ -425,10 +450,43 @@ def main():
         local_tz = pytz.timezone("Asia/Phnom_Penh")
         report_time = time(hour=22, minute=40, second=0, tzinfo=local_tz)
         job_queue.run_daily(daily_scheduled_revenue_job, time=report_time)
-        print(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
+        logger.info(f"⏰ Daily 10:40 PM Revenue Report scheduled for time: {report_time}")
 
-    print("🚀 Speed Queen Insights Telegram Bot (with /teststart & /testend commands) is running...")
-    app.run_polling()
+    logger.info("🚀 Speed Queen Insights Telegram Bot starting polling...")
+    
+    # Initialize and start bot application gracefully for Cloud Docker containers
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling(drop_pending_updates=True)
+
+    # Keep application running continuously until SIGTERM or SIGINT
+    stop_event = asyncio.Event()
+    loop = asyncio.get_running_loop()
+
+    def stop_handler():
+        logger.info("Received termination signal, stopping bot gracefully...")
+        stop_event.set()
+
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        try:
+            loop.add_signal_handler(sig, stop_handler)
+        except NotImplementedError:
+            pass
+
+    await stop_event.wait()
+
+    logger.info("Shutting down bot application cleanly...")
+    await app.updater.stop()
+    await app.stop()
+    await app.shutdown()
+    logger.info("Bot application shutdown complete.")
+
+
+def main():
+    try:
+        asyncio.run(main_async())
+    except (KeyboardInterrupt, SystemExit):
+        logger.info("Bot process exited.")
 
 
 if __name__ == "__main__":
